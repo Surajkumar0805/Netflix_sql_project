@@ -73,9 +73,10 @@ FROM
 	) AS t1
 WHERE 
 	ranking = 1;
-    ```
+```
 
 ##3. List all movies released in a specific year (e.g., 2020)
+
 ```sql
 SELECT 
 	COUNT(*)
@@ -234,7 +235,3 @@ GROUP BY category;
 This analysis provides a comprehensive view of Netflix's content and can help inform content strategy and decision-making.
 
 
-
-- **Discord**: [Join our community to learn and grow together](https://discord.gg/36h5f2Z5PK)
-
-Thank you for your support, and I look forward to connecting with you!
