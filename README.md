@@ -43,9 +43,9 @@ CREATE TABLE netflix_titles (
 
 ## Business Problems and Solutions
 
--- 15 Business Problems & Solutions
+##15 Business Problems & Solutions
 
--- 1. Count the number of Movies vs TV Shows
+##1. Count the number of Movies vs TV Shows
 
 SELECT 
 	type,
