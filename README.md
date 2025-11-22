@@ -43,9 +43,9 @@ CREATE TABLE netflix_titles (
 
 ## Business Problems and Solutions
 
-##15 Business Problems & Solutions
+## 15 Business Problems & Solutions
 
-##1. Count the number of Movies vs TV Shows
+## 1. Count the number of Movies vs TV Shows
 ```sql
 SELECT 
 	type,
@@ -55,7 +55,7 @@ GROUP BY type;
 ```
 
 
-2. Find the most common rating for movies and TV shows
+## 2. Find the most common rating for movies and TV shows
 ```sql
 SELECT 
 	type,
@@ -75,7 +75,7 @@ WHERE
 	ranking = 1;
 ```
 
-##3. List all movies released in a specific year (e.g., 2020)
+## 3. List all movies released in a specific year (e.g., 2020)
 
 ```sql
 SELECT 
@@ -87,7 +87,7 @@ WHERE
     release_year = 2020;
 ```
 
-##4. Find the top 5 countries with the most content on Netflix
+## 4. Find the top 5 countries with the most content on Netflix
 ```sql
 SELECT
   TRIM(jt.country) AS country,
@@ -103,7 +103,7 @@ ORDER BY total_content DESC
 LIMIT 5;
 
 ```
-##5. Identify the longest movie
+## 5. Identify the longest movie
 ```sql
 SELECT 
     title,
@@ -127,7 +127,7 @@ SELECT *
 FROM netflix_titles
 WHERE director LIKE '%Masahiko Murata%' ;
 ```
-##8. List all TV shows with more than 5 seasons
+## 8. List all TV shows with more than 5 seasons
 ```sql
 SELECT *
 FROM netflix_titles
@@ -135,7 +135,7 @@ WHERE type = 'TV Show'
   AND CAST(SUBSTRING_INDEX(duration, ' ', 1) AS UNSIGNED) > 5;
 ```
 
-##9. Count the number of content items in each genre
+## 9. Count the number of content items in each genre
 ```sql
 SELECT 
     TRIM(jt.genre) AS genre,
@@ -150,7 +150,7 @@ GROUP BY TRIM(jt.genre)
 ORDER BY total_content DESC;
 	
 ```
-##10.Find each year and the average numbers of content release in India on netflix. Also return top 5 year with highest avg content release!
+## 10.Find each year and the average numbers of content release in India on netflix. Also return top 5 year with highest avg content release!
 ```sql
 SELECT 
     YEAR(STR_TO_DATE(date_added, '%M %d, %Y')) AS release_year,
@@ -168,21 +168,21 @@ GROUP BY YEAR(STR_TO_DATE(date_added, '%M %d, %Y'))
 ORDER BY release_year DESC;
 ```
 
-##11. List all movies that are documentaries
+## 11. List all movies that are documentaries
 ```sql
 SELECT *
 FROM netflix_titles
 WHERE listed_in LIKE '%Documentaries%';
 
 ```
-##12. Find all content without a director
+## 12. Find all content without a director
 ```sql
 SELECT *
 FROM netflix_titles
 WHERE director IS NULL
    OR director = '';
 ```
-##13. Find how many movies actor 'Salman Khan' appeared in last 10 years!
+## 13. Find how many movies actor 'Salman Khan' appeared in last 10 years!
 ```sql
 SELECT COUNT(*) AS salman_khan_movie_count
 FROM netflix_titles 
@@ -208,9 +208,7 @@ ORDER BY movie_count DESC
 LIMIT 10;
 ```
 ## 15.
-##Categorize the content based on the presence of the keywords 'kill' and 'violence' in 
-## the description field. Label content containing these keywords as 'Bad' and all other 
-## content as 'Good'. Count how many items fall into each category.
+## Categorize the content based on the presence of the keywords 'kill' and 'violence' in the description field. Label content containing these keywords as 'Bad' and all other content as 'Good'. Count how many items fall into each category.
 ```sql
 
 SELECT 
